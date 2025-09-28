@@ -11,7 +11,11 @@ set(SOURCES
        "${CMAKE_CURRENT_LIST_DIR}/src/libprg/libprg.c"       
 )
 
-add_library(libprg)
+add_library(libprg
+        l2-exercico-1.c
+        src/libprg/fila.c
+        ../l4-exercicio1.c
+)
 target_sources(libprg PUBLIC ${SOURCES})
 target_include_directories(libprg PUBLIC ${CMAKE_CURRENT_LIST_DIR}/src/include)
 
