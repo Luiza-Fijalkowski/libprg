@@ -1,54 +1,79 @@
-
 #include <stdbool.h>
+#include <stdio.h>
 #include <stdlib.h>
+
 #include "libprg/libprg.h"
 
-typedef struct fila {
-    int* elementos ;
+typedef struct no {
+    int* elementos;
     int tamanho;
     int inicio;
     int fim;
     int capacidade;
-    int* fila;
-}fila_t;
+} fila_t;
 
-
-
-
+static bool cheia(fila_t* fila);
 
 fila_t* criar_fila(int capacidade) {
-    fila_t* f = malloc(sizeof(fila_t));
+    fila_t* fila = malloc(sizeof(fila_t));
+    fila->elementos = malloc(sizeof(int) * capacidade);
+    fila->inicio = 0;
+    fila->fim = 0;
+    fila->tamanho = 0;
+    fila->capacidade = capacidade;
 
-    f->elementos = malloc(capacidade * sizeof(int));
-
-    f->inicio = 0;
-    f->fim = 0;
-    f->tamanho = 0;
-    f->capacidade = capacidade;
-
-    return f;
-}
-
-void enfileirar(fila_t* f, int valor) {
+    return fila;
+};
+void enfileirar(fila_t* fila, int valor) {
     if (cheia(fila)) {
-        exit(status:EXIT_FAILURE);
+        exit(EXIT_FAILURE);
     }
-    f->elementos[f->fim] = valor;
-    f->fim++;
-    f->tamanho++;
+
+    fila->elementos[fila->fim] = valor;
+    fila->fim = (fila->fim + 1) % fila->capacidade;
+    fila->tamanho++;
+};
+
+void desenfileirar(fila_t* fila) {
+    if (fila->tamanho <= 0) {
+        exit(EXIT_FAILURE);
+    }
+
+    fila->inicio = (fila->inicio + 1) % fila->capacidade;
+    fila->tamanho--;
 }
-// desenfileirar
-// inicio
-// fim
-// tamanho
-// vazia
-//destruir_fila
 
-bool cheia(fila_t fila) {
+int inicio_fila(fila_t* fila) {
+    return fila->elementos[fila->inicio];
+}
 
-    if (fila.tamanho >= fila.capacidade) {
-        return true;;
-    }else{return false;}
+int fim_fila(fila_t* fila) {
+    if (fila->tamanho > 0 &&
+        (fila->inicio == fila->fim) &&
+        fila->fim == 0) {
+        return fila->elementos[fila->capacidade - 1];
+        }
+    return fila->elementos[fila->fim];
+}
+
+int tamanho_fila(fila_t* fila) {
+    return fila->tamanho;
+}
+
+void imprime_fila(fila_t* fila) {
+    for (int i = 0; i < fila->tamanho; i++) {
+        int indice = (fila->inicio + i) % fila->capacidade;
+        printf("%d ", fila->elementos[indice]);
+    }
+}
+
+void destruir_fila(fila_t* fila) {
+    free(fila->elementos);
+    free(fila);
+}
+
+static bool cheia(fila_t* fila) {
+    return fila->tamanho >= fila->capacidade;
 }
 
 
