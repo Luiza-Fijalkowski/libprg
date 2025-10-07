@@ -11,7 +11,6 @@ set(SOURCES
 
 add_library(libprg
         src/libprg/fila.c
-        ../l4-exercicio1.c
         src/libprg/lista_encadeada.c
         src/libprg/lista.c
         src/libprg/pilha.c

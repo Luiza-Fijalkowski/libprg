@@ -3,6 +3,16 @@
 
 #include <stdbool.h>
 
+    //----pilha----
+typedef struct pilha pilha_t;
+
+ pilha_t* cria_pilha(int qnt);
+void empilhar( pilha_t* pilha, int valor);
+int desempilhar(pilha_t* pilha);
+int topo_pilha(pilha_t* pilha);
+int tamanho_pilha(pilha_t* pilha);
+void imprime_pilha(pilha_t* pilha);
+void destruir_pilha(pilha_t *pilha);
 
     //----fila----
 
