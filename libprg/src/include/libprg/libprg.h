@@ -61,5 +61,12 @@ void adicionar_lista_encadeada_dupla(no_duplo_t** inicio, int valor);
 no_duplo_t* buscar_lista_encadeada_dupla(no_duplo_t** inicio, int valor);
 void remover_lista_encadeada_dupla(no_duplo_t** inicio, int valor);
 void destruir_lista_encadeada_dupla(no_duplo_t** inicio);
+
+    //----arvore----
+typedef struct no no_t;
+no_t *criar_no(int valor);
+void destruir_no(no_t *no);
+
+
 #endif
 
