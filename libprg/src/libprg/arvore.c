@@ -18,7 +18,7 @@ void destruir_no(no_t *no) {
         destruir_no(no->direita);
         free(no);
     }
-    // todo nó é raiz de uma subárvore
+    //todo nó é raiz de uma subárvore
     no_t *inserir_valor(no_t *raiz, int valor){
         if (raiz == NULL) {
             return criar_no(valor);
