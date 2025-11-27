@@ -68,5 +68,18 @@ no_t *criar_no(int valor);
 void destruir_no(no_t *no);
 
 
+
+    //----dicionario----
+typedef struct pessoa pessoa_t;
+typedef struct no no_t;
+typedef struct dicionario dicionario_t;
+dicionario_t *criar_dicionario(int m);
+void destruir_pessoa(pessoa_t *pessoa);
+void destruir_no(no_t *no);
+void destruir_dicionario(dicionario_t d);
+int hash(const char *chave, int m);
+
+
+
 #endif
 
