@@ -30,7 +30,15 @@ empilhar(pilha_t* pilha, int valor) {
     return 0;
 }
 // PRÓXIMA AULA:
-// desempilhar
+int desempilhar(pilha_t* pilha) {
+    if (pilha->topo < 0) {
+        exit(EXIT_FAILURE);
+    }
+
+    int valor = pilha->elementos[pilha->topo];
+    pilha->topo--;
+    return valor;
+}
 // tamanho
 // vazia
 // destruir_pilha
