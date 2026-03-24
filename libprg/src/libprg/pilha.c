@@ -20,7 +20,7 @@ pilha_t* criar_pilha(int capacidade) {
     return pilha;
 }
 
-empilhar(pilha_t* pilha, int valor) {
+int empilhar(pilha_t* pilha, int valor) {
 
     if (pilha->topo < pilha->capacidade) {
         pilha->topo++;
@@ -29,7 +29,7 @@ empilhar(pilha_t* pilha, int valor) {
 
     return 0;
 }
-// PRÓXIMA AULA:
+
 int desempilhar(pilha_t* pilha) {
     if (pilha->topo < 0) {
         exit(EXIT_FAILURE);
@@ -39,6 +39,18 @@ int desempilhar(pilha_t* pilha) {
     pilha->topo--;
     return valor;
 }
-// tamanho
-// vazia
-// destruir_pilha
+
+int tamanho(pilha_t* pilha) {
+
+    return pilha->topo + 1;
+}
+
+ bool vazia(pilha_t* pilha) {
+
+        return pilha->topo < 0;
+
+}
+int destruir_pilha(pilha_t* pilha) {
+    free(pilha->elementos);
+    free(pilha);
+}
