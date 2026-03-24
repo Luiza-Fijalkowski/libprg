@@ -3,5 +3,6 @@
 
 typedef struct pilha pilha_t;
 pilha_t* criar_pilha(int capacidade);
+empilhar(pilha_t* pilha, int valor);
 
 #endif
