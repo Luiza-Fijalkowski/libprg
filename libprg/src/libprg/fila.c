@@ -5,7 +5,7 @@
 
 #include <stdlib.h>
 
-typedef struct fila {
+ typedef struct fila{
     int* elementos;
     int inicio;
     int fim;

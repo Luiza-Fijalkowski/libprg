@@ -1,8 +1,9 @@
 //
 // Created by aluno on 24/03/2026.
 //
-#include "libprg.h"
+
 #include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct pilha {
     int* elementos;
