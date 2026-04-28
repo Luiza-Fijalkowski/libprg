@@ -34,6 +34,7 @@ int destruir_fila(fila_t* fila);
 typedef struct lista_linear lista_linear_t;
 lista_linear_t* criar_lista(bool ordenada);
 
-
+//----LISTA ENCADEADA----
+typedef struct no no_t;
 
 #endif
