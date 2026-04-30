@@ -22,6 +22,12 @@ void inserir_ecadeada(no_t** inicio, int dado) {
     novo->proximo = *inicio;
     *inicio = novo;
 }
-// revover
+ void revover_encadeada(no_t**,int dado) {
+
+}
 // buscar
-// desctruir
+ int desctruir_encadeada(int dado) {
+    free(malloc(sizeof(no_t)));
+    no_t->dado = (int) NULL;
+    return dado;
+}
