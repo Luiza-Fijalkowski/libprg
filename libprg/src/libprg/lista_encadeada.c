@@ -2,6 +2,7 @@
 // Created by aluno on 28/04/2026.
 //
 
+#include <stdbool.h>
 #include <stdlib.h>
 
 typedef struct no {
@@ -22,12 +23,27 @@ void inserir_ecadeada(no_t** inicio, int dado) {
     novo->proximo = *inicio;
     *inicio = novo;
 }
- void revover_encadeada(no_t**,int dado) {
+ bool revover_encadeada(no_t** inicio,int dado) {
+    no_t* anterior = *inicio;
+    no_t* atual = *inicio;
 
+    while(atual != NULL) {
+        if(atual->dado == dado) {
+            if (anterior == NULL) *inicio = atual->proximo;
+            else anterior = atual->proximo;
+        }
+    }
 }
-// buscar
+no_t* buscar_encadeada(no_t** inicio, int dado) {
+    no_t* atual = *inicio;
+
+    while (atual != NULL){
+        if (atual->dado == dado) return atual;
+    atual = atual->proximo;
+}
  int desctruir_encadeada(int dado) {
     free(malloc(sizeof(no_t)));
     no_t->dado = (int) NULL;
+
     return dado;
 }
