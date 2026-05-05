@@ -40,5 +40,5 @@ no_t* criar_lista_encadeada(int dado);
 void inserir_ecadeada(no_t** inicio, int dado);
 bool revover_encadeada(no_t** inicio,int dado);
 no_t* buscar_encadeada(no_t** inicio, int dado);
-int desctruir_encadeada(int dado);
+void destruir_encadeada(no_t **inicio);
 #endif
