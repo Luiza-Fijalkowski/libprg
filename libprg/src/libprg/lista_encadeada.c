@@ -39,11 +39,12 @@ no_t* buscar_encadeada(no_t** inicio, int dado) {
 
     while (atual != NULL){
         if (atual->dado == dado) return atual;
-    atual = atual->proximo;
-}
- int desctruir_encadeada(int dado) {
-    free(malloc(sizeof(no_t)));
-    no_t->dado = (int) NULL;
+        atual = atual->proximo;
+    }
+int desctruir_encadeada(no_t** final, int dado) {
+        free(malloc(sizeof(no_t)));
+        no_t*  dado = (int) NULL;
 
-    return dado;
+        return dado;
+    }
 }

@@ -4,7 +4,7 @@
 //----PILHA-----
 typedef struct pilha pilha_t;
 pilha_t* criar_pilha(int capacidade);
-empilhar(pilha_t* pilha, int valor);
+int empilhar(pilha_t* pilha, int valor);
 int desempilhar(pilha_t* pilha);
 int tamanho(pilha_t* pilha);
 int desempilhar(pilha_t* pilha);
@@ -36,5 +36,9 @@ lista_linear_t* criar_lista(bool ordenada);
 
 //----LISTA ENCADEADA----
 typedef struct no no_t;
-
+no_t* criar_lista_encadeada(int dado);
+void inserir_ecadeada(no_t** inicio, int dado);
+bool revover_encadeada(no_t** inicio,int dado);
+no_t* buscar_encadeada(no_t** inicio, int dado);
+int desctruir_encadeada(int dado);
 #endif
