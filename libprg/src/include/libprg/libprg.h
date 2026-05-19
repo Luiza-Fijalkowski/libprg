@@ -41,4 +41,7 @@ void inserir_ecadeada(no_t** inicio, int dado);
 bool revover_encadeada(no_t** inicio,int dado);
 no_t* buscar_encadeada(no_t** inicio, int dado);
 void destruir_encadeada(no_t **inicio);
+
+//----ARVORE----
+typedef struct noa noa_t;
 #endif
