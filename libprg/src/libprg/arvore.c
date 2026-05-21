@@ -44,6 +44,7 @@ noa_t* adicionar_noa(noa_t* raiz, int dado) {
     return raiz;
 }
 
+//travesia_pre ordem
 void imprimir_em_ordem(noa_t* raiz) {
     if (raiz != NULL) {
         imprimir_em_ordem(raiz->esquerda);
@@ -52,5 +53,6 @@ void imprimir_em_ordem(noa_t* raiz) {
     }
 }
 
+//travesia_pos ordem
 // remover
 // destruir
