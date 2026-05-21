@@ -43,5 +43,9 @@ no_t* buscar_encadeada(no_t** inicio, int dado);
 void destruir_encadeada(no_t **inicio);
 
 //----ARVORE----
-typedef struct noa noa_t;
+typedef struct no noa_t;
+noa_t* criar_noa(int dado);
+noa_t* adicionar_noa(noa_t* raiz, int dado);
+void imprimir_em_ordem(noa_t* raiz);
+
 #endif

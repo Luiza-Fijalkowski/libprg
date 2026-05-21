@@ -1,33 +1,56 @@
 //
 // Created by aluno on 19/05/2026.
 //
-
+#include <stdio.h>
 #include <stdlib.h>
 
 typedef struct no {
     int dado;
-    noa_t* esquerda;
-    noa_t* direita;
-}noa_t;
+    struct no* esquerda;
+    struct no* direita;
+} noa_t;
 
 noa_t* criar_noa(int dado) {
     noa_t* no = malloc(sizeof(noa_t));
+
+    if (no == NULL) {
+        return NULL;
+    }
+
     no->dado = dado;
     no->esquerda = NULL;
     no->direita = NULL;
 
     return no;
 }
-int adcionar_noa(noa_t* raiz, int dado) {
-    noa_t* novo_no = criar_noa(dado);
 
-    if(raiz->dado < dado) {
-        adcionar_noa(raiz->direita, dado);
-    }else {adicionar_noa(raiz->esquerda, dado);}
+noa_t* adicionar_noa(noa_t* raiz, int dado) {
 
-    return 0;
+    // Se a árvore/subárvore estiver vazia
+    if (raiz == NULL) {
+        return criar_noa(dado);
+    }
+
+    // Inserção na direita
+    if (dado > raiz->dado) {
+        raiz->direita = adicionar_noa(raiz->direita, dado);
+    }
+
+    // Inserção na esquerda
+    else {
+        raiz->esquerda = adicionar_noa(raiz->esquerda, dado);
+    }
+
+    return raiz;
 }
 
+void imprimir_em_ordem(noa_t* raiz) {
+    if (raiz != NULL) {
+        imprimir_em_ordem(raiz->esquerda);
+        printf("%d ", raiz->dado);
+        imprimir_em_ordem(raiz->direita);
+    }
+}
 
 // remover
 // destruir
