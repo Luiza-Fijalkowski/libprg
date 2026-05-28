@@ -53,6 +53,38 @@ void imprimir_em_ordem(noa_t* raiz) {
     }
 }
 
-//travesia_pos ordem
+void travesia_pos_ordem(noa_t* raiz) {
+    if (raiz == NULL) {
+
+    }
+}
+
 // remover
+noa_t* remover_noa(noa_t* raiz, int dado) {
+    if (dado < raiz->dado) {
+        raiz -> esquerda = remover_noa(raiz->esquerda, dado);
+    }else if (dado > raiz->dado) {
+        raiz -> direita = remover_noa(raiz->direita, dado);
+    }else {
+        if (raiz->direita == NULL || raiz->esquerda == NULL||NULL) {
+            noa_t* temp = raiz -> esquerda ? raiz -> esquerda : raiz -> direita;
+            if (temp == NULL) { // 0 filhos
+                free(raiz);
+                return NULL;
+            }
+            free(raiz); //1 filho
+            return temp;
+        }else { // 2 filhos
+            //encontra o menor valor da subarvore da direita
+            noa_t* retorno = raiz -> direita;
+            while (temp && temp -> esquerda !=NULL) {
+                tempe = temp -> esquerda;
+            }
+            raiz -> dado = temp->dado;
+            raiz -> direita = remover_noa(raiz->direita, temp -> dado);
+
+        }
+    }
+    return raiz;
+}
 // destruir
