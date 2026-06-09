@@ -3,6 +3,7 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct no {
     int dado;
@@ -66,7 +67,7 @@ noa_t* remover_noa(noa_t* raiz, int dado) {
     }else if (dado > raiz->dado) {
         raiz -> direita = remover_noa(raiz->direita, dado);
     }else {
-        if (raiz->direita == NULL || raiz->esquerda == NULL||NULL) {
+        if (raiz->direita == NULL || raiz->esquerda == NULL) {
             noa_t* temp = raiz -> esquerda ? raiz -> esquerda : raiz -> direita;
             if (temp == NULL) { // 0 filhos
                 free(raiz);
@@ -77,8 +78,9 @@ noa_t* remover_noa(noa_t* raiz, int dado) {
         }else { // 2 filhos
             //encontra o menor valor da subarvore da direita
             noa_t* retorno = raiz -> direita;
+            noa_t* temp = raiz -> esquerda;
             while (temp && temp -> esquerda !=NULL) {
-                tempe = temp -> esquerda;
+                temp = temp -> esquerda;
             }
             raiz -> dado = temp->dado;
             raiz -> direita = remover_noa(raiz->direita, temp -> dado);

@@ -33,6 +33,9 @@ int destruir_fila(fila_t* fila);
 
 typedef struct lista_linear lista_linear_t;
 lista_linear_t* criar_lista(bool ordenada);
+int remover(lista_linear_t* lista, int alvo);
+int buscar_linear (lista_linear_t* lista);
+int busca_binaria (lista_linear_t* lista);
 
 //----LISTA ENCADEADA----
 typedef struct no no_t;

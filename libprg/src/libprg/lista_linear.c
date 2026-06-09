@@ -24,20 +24,24 @@ lista_linear_t* criar_lista(bool ordenada) {
 
     return lista;
 }
+int buscar_linear (lista_linear_t* lista) {}
+
+int busca_binaria (lista_linear_t* lista) {}
 
 //incerir
-remover(lista_linear_t* lista, int alvo) {
+int remover(lista_linear_t* lista, int alvo) {
 
     int indice;
 
     if (lista->ordenada) {
-        indice = busca_binario;
+        indice = busca_binario(lista, alvo);
     }else {
-        indice = busca_linear;
+        indice = busca_linear(lista, alvo);
     }
 }
-//buscar_linear
-//busca_binaria
+
 //alternar
 //combinar
-//destruir
+int destruir_lista_linear(lista_linear_t* lista) {
+    free(lista->elementos);
+}
